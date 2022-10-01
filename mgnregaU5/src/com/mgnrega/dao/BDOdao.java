@@ -1,9 +1,14 @@
 package com.mgnrega.dao;
 
+import java.sql.SQLException;
+
 public interface BDOdao {
 	
 	
-	public String createGMP();
+	abstract void bdo_login() throws SQLException;
+	
+	
+	abstract String createGMP();
 	
 	
 	

@@ -9,7 +9,7 @@ import com.mysql.cj.jdbc.Driver;
 public class DBUtil {
 
 	
-	public static Connection provideConnection() {
+	public Connection provideConnection() {
 		
 		
 		Connection conn=null;
