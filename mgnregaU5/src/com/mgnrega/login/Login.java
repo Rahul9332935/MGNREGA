@@ -6,14 +6,14 @@ import java.util.Scanner;
 
 import com.mgnrega.dao.BDOdao;
 import com.mgnrega.dao.BDOimpl;
+import com.mgnrega.dao.GMP;
 import com.mgnrega.utility.DBUtil;
-import com.mysql.cj.log.Log;
 
 public class Login {
 	
 	Scanner sc=new Scanner(System.in);
 	
-	
+	GMP gmp=new GMP();
 	 BDOdao bdo=new BDOimpl();
 	
 	public void login_choice() throws SQLException{
@@ -33,6 +33,10 @@ public class Login {
 			bdo.bdo_login();
 			break;
 		}
+		case 2:{
+			gmp.gmp_login();
+			break;
+		}
 		
 		default:
 			System.out.println("Wrong option..Try again \n");
@@ -44,16 +48,12 @@ public class Login {
 		
 	}
 	
-	
-	
-	
-	
 	public static void main(String[] args) {
 		
 	Login login =new Login();
 	
-	DBUtil db=new DBUtil();
-	Connection con= db.provideConnection();
+//	DBUtil db=new DBUtil();
+//	Connection con= db.provideConnection();
 	
 	try {
 		login.login_choice();
